@@ -29,7 +29,6 @@ public class SecondFragment extends Fragment {
         binding.btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 ThirstFragment fragment = new ThirstFragment();
                 Bundle bundle = new Bundle();
                 String text = binding.tv2.getText().toString();

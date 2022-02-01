@@ -27,10 +27,17 @@ public class ThirstFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.tv3.setText(getArguments().getString("fragment_2"));
         binding.btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                FourthFragment fragment = new FourthFragment();
+                Bundle bundle = new Bundle();
+                String text = binding.tv3.getText().toString();
+                bundle.putString("fragment_3", text);
+                fragment.setArguments(bundle);
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container_fragment, fragment).commit();
             }
         });
     }
